@@ -8,15 +8,9 @@
 package com.initializationblock;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JComboBox;
 
 import com.initializationblock.EnumExample.Season;
-
-import javafx.scene.CacheHint;
-import javafx.scene.control.ComboBox;
 
 
 public class Main
@@ -45,10 +39,9 @@ public class Main
         new Hello();
         EnumExample e = new EnumExample();
 
-
         JComboBox combo = new JComboBox(Season.values());
 
-       System.out.println(combo.getItemAt(3));
+        System.out.println(combo.getItemAt(3));
 
     }
 
@@ -73,6 +66,17 @@ public class Main
     {
         int age = 27;
         System.out.println("Якооо " + age);
+        Thread t1 = new Thread(new Runnable()
+        {
+
+            @Override
+            public void run()
+            {
+                System.out.println("Резултат от Нишка 1");
+            }
+        }, "Нишка-1");
+
+        t1.start();
     }
 
 }
