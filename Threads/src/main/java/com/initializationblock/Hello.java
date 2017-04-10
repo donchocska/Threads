@@ -7,19 +7,30 @@
  */
 package com.initializationblock;
 
+
 public class Hello extends Doncho
 {
 
     static String name = "Дончо";
 
 
-    public Hello(){
+    public Hello()
+    {
         super();
+        System.out.println("Изпълнявам след Някакъв instance block");
+
     }
 
     static
     {
+        name = "Петранка";
         System.out.println("Здравей " + name);
+        new Doncho("Хисаря");
+
+    }
+
+    {
+        System.out.println("Някакъв instance block");
     }
 
 }
