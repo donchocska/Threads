@@ -108,9 +108,15 @@ public class Main
 
             System.out.println("=========Employees==========");
 
-            Employees doncho = new Employees("Дончо", 27);
-            Employees emi = new Employees("Емилия", 25);
-            Employees vania = new Employees("Ваня", 29);
+            Employees doncho = new Employees();
+            doncho.setName("Дончо");
+            doncho.setAge(27);
+            Employees emi = new Employees();
+            emi.setName("Емилия");
+            emi.setAge(25);
+            Employees vania = new Employees();
+            vania.setName("Ваня");
+            vania.setAge(29);
 
             List<Callable<String>> listEmployees = new ArrayList<Callable<String>>();
             listEmployees.add(doncho);
@@ -121,7 +127,7 @@ public class Main
 
             for (Future<String> fu : futures)
             {
-                System.out.println(fu.get());
+               fu.get();
             }
 
             ex.submit(new MyTxtFile());

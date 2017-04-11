@@ -7,15 +7,21 @@
  */
 package com.executors;
 
+
 import java.util.concurrent.Callable;
+
 
 public class Employees implements Callable
 {
 
-   private String name;
-   private int age;
+    private String name;
+    private int age;
 
 
+    public Employees()
+    {
+
+    }
 
 
     public Employees(String name, int age)
@@ -24,7 +30,7 @@ public class Employees implements Callable
         this.name = name;
         this.age = age;
 
-       // System.out.println("Име: " + name + " Години: " + age);
+        System.out.println("Име: " + name + " Години: " + age);
     }
 
 
@@ -46,8 +52,6 @@ public class Employees implements Callable
     }
 
 
-
-
     /**
      * @return Returns value of age.
      */
@@ -55,8 +59,6 @@ public class Employees implements Callable
     {
         return age;
     }
-
-
 
 
     /**
@@ -68,13 +70,11 @@ public class Employees implements Callable
     }
 
 
-
-
     @Override
     public Object call() throws Exception
     {
 
-        return "Дончо";
+        return new Employees(name, age);
     }
 
 
@@ -87,9 +87,4 @@ public class Employees implements Callable
         return "Employees [name=" + name + ", age=" + age + "]";
     }
 
-
-
 }
-
-
-
