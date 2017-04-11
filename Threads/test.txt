@@ -1,0 +1,6 @@
+In this example, you will learn how to use the asynchronous methods provided by the ForkJoinPool
+and ForkJoinTask classes for the management of tasks. You are going to implement a program that
+will search for files with a determined extension inside a folder and its subfolders. The ForkJoinTask
+class you’re going to implement will process the content of a folder. For each subfolder inside that
+folder, it will send a new task to the ForkJoinPool class in an asynchronous way. For each file inside
+that folder, the task will check the extension of the file and add it to the result list if it proceeds.

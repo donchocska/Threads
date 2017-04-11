@@ -124,6 +124,8 @@ public class Main
                 System.out.println(fu.get());
             }
 
+            ex.submit(new MyTxtFile());
+
         }
         finally
         {
