@@ -20,9 +20,20 @@ public class ThreadPoolExample
 
         ExecutorService tpes = new ThreadPoolExecutor(5, 10, 5, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
 
+        Thread t1 = new Thread(new Runnable()
+        {
+
+            @Override
+            public void run()
+            {
+               System.out.println("Нова нишка");
+
+            }
+        });
+
+        tpes.submit(t1);
+
+        tpes.shutdown();
     }
 
 }
-
-
-
